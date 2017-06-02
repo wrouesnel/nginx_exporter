@@ -1,0 +1,13 @@
+language: go
+go:
+- '1.8'
+script:
+- CGO_ENABLED=0 make
+deploy:
+  provider: releases
+  api_key:
+    secure: mSCMVD/N9uTSKonUNpCHl5x42VAhLMoUx0Os9Yt0iWP9b39soL+ff/WGVbmAgwuDGVXUea7CCz6Jv+CqPeHQ/kuWYdW4S2stVtPV9VrP2atVpPRz5K0cmKo0wMhRiuvBBPPKydLjoB+CCFSWqlY19dzonGHaA5c8oVHpvmsL02KWImCg3RwJJvoA8sP4P/qIUKNmc7EXtKXOgxMzY/GyOit2LVeW2LzKMuvpUhu8pXoWuCaLKkM5iHk6o+SIF/Y6gBpwy9Uu9GM7HDBlRsbXGD5g4NaE03pXG559w8UlEn4FQaH7tM6lcmsxnsHilhF+bjl5YmIJPXYZj34nbi8vFZATTZ+tKAmVIyjNAPazGKIiL0IppmQib8btWO9PD4xBB6hI3hIiOHXf05z9/EfFoxnsTATGXRBQTgeRUIvmvaiGmh7qE5B+7e0bJklYzCS/JvlnGlkoc2GnP3ngD6rs4pactGco7EtwYGjFrR+oIua+/nAHhf5tmeT3LosUgK9CQQdLTyf4FvkUbKlT38ETGgbzQRKH8RCvx39kt7FTac5tXLKR+ssNwOXQhWet+DE71Typrt42fFUsIEkOyR66cg0Lrtm7c6oJLfokg3yzJ0epuTEl7tu3eqas0B3hQHGGjI13v3IAciu1BtuICmb0EhgDz/NhCZtvHETNkvBo1Vk=
+  file: nginx_exporter
+  on:
+    repo: wrouesnel/nginx_exporter
+    tags: true
